@@ -44,7 +44,7 @@ export default async function Home() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-center p-20">
       <Banner
         purpose='RENT A HOME'
         title1='Rental Homes for'
@@ -55,7 +55,7 @@ export default async function Home() {
         linkName='/search?purpose=for-rent'
         imageUrl='https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4'
       />
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 justify-center">
         {propertyForRent?.hits.map((property: any) => <Property property={property} key={property.id} />)}
       </div>
 
@@ -69,7 +69,7 @@ export default async function Home() {
         linkName='/search?purpose=for-sale'
         imageUrl='https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008'
       />
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 justify-center">
         {propertyForSale?.hits.map((property: any) => <Property property={property} key={property.id} />)}
       </div>
     </main>

@@ -134,7 +134,7 @@ const SearchFilters = () => {
       <div className="flex flex-col self-end">
         <button
           type="button"
-          className="border text-base mt-2 border-gray-200 p-2 rounded-md"
+          className="border text-base mt-2 border-gray-50 p-2 rounded-md hover:bg-slate-200"
           onClick={() => setShowLocations(!showLocations)}
         >
           Search Location
@@ -143,7 +143,7 @@ const SearchFilters = () => {
           <div className="flex flex-col relative pt-2">
             <input
               type="text"
-              className="block w-[300px] rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               placeholder="Type Here"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -151,7 +151,10 @@ const SearchFilters = () => {
             {searchTerm !== "" && (
               <div
                 className="absolute cursor-pointer right-5 top-5 z-[100]"
-                onClick={() => setSearchTerm("")}
+                onClick={() => {
+                  setSearchTerm("");
+                  setLocationData(null);
+                }}
               >
                 <MdCancel />
               </div>
@@ -180,8 +183,8 @@ const SearchFilters = () => {
                 <Image
                   src={noresult}
                   alt="no result"
-                  width={400}
-                  height={400}
+                  width={200}
+                  height={200}
                 />
                 <div className="text-xl mt-3">Waiting to search!</div>
               </div>

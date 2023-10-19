@@ -35,7 +35,7 @@ const getProperties = async (searchParams: any) => {
     return (
       <main className="flex flex-col min-h-screen items-center justify-center p-24">
         <Search />
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 justify-center">
             {properties?.map((property: any) => <Property property={property} key={property.id} />)}
         </div>
         {properties.length === 0 && (

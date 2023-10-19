@@ -17,7 +17,7 @@ export default function Search() {
             </div>
             {searchFilters && <SearchFilters />}
             <div className="text-2xl p-4 font-bold">
-                Properties {searchParams.get('purpose')}
+                Properties {searchParams?.get('purpose')}
             </div>
         </div>
     )
